@@ -1,0 +1,22 @@
+{
+  "functions": [
+    {
+      "source": "src",
+      "codebase": "default"
+    },
+    {
+      "source": "auth-1",
+      "codebase": "auth-1",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
+}

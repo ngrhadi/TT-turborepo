@@ -1,0 +1,10 @@
+{
+  "functions": {
+    "source": "packages/firebase-functions"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    }
+  }
+}
