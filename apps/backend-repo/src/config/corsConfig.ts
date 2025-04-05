@@ -3,6 +3,7 @@ dotenv.config();
 
 import cors, { CorsOptionsDelegate, CorsRequest } from 'cors';
 
+
 export function configureCors() {
   const corsOptionsDelegate: CorsOptionsDelegate = (
     req: CorsRequest,

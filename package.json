@@ -10,8 +10,10 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "serve": "npm run build && firebase emulators:start --only functions --project=emulator-demo-fb",
-    "check-types": "turbo run check-types"
+    "firebase": "firebase emulators:start --only functions,auth,firestore --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
+    "check-types": "turbo run check-types",
+    "serve": "npm run build && firebase emulators:start --only functions,auth,firestore --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
+    "start": "turbo run start --filter=frontend-repo --filter=backend-repo"
   },
   "devDependencies": {
     "prettier": "^3.5.3",

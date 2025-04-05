@@ -27,7 +27,7 @@ export const requestLogger = (
         statusCode >= 500 ? '❌' : statusCode >= 400 ? '⚠️' : '✅';
 
       console.log(
-        `⏰[${timeStamp}] - ⚙️ ${method} 🚀${url} | ${statusIcon} ${statusCode} (${duration}ms)`
+        `⏰[${timeStamp}] - ${statusIcon} ${statusCode} ${method} ${url} | (${duration}ms)`
       );
     });
 
