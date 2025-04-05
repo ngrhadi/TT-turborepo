@@ -1,9 +1,14 @@
 # 🔥 Firebase Turbo App
 
 A full-stack monorepo project built with **Turborepo**, integrating:
-- 🧑‍💻 **Frontend**: [Next.js 14](https://nextjs.org/) (App Router)
-- ⚙️ **Backend**: [Express.js](https://expressjs.com/)
-- ☁️ **Firebase Emulator Suite**: Auth, Firestore, Functions
+
+| Layer     | Tech                                                   |
+|-----------|--------------------------------------------------------|
+| Frontend  | [Next.js 14](https://nextjs.org/) (App Router), Redux, Firebase Auth          |
+| Backend   | [Express.js](https://expressjs.com/), Firebase Admin SDK                         |
+| Database  | Firestore (Emulator)                                   |
+| Auth      | Firebase Authentication                                |
+| Infra     | Turborepo, Firebase Emulator Suite                     |
 
 ---
 
@@ -79,11 +84,3 @@ This runs both frontend and backend using Turborepo.
 └── turbo.json               → Turborepo configuration
 ```
 ---
-## Tech Stack
----
-Layer	Tech
-Frontend	Next.js 14 (App Router), Redux, Firebase Auth
-Backend	Express.js, Firebase Admin SDK
-Database	Firestore (Emulator)
-Auth	Firebase Authentication
-Infra	Turborepo, Firebase Emulator Suite
