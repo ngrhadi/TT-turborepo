@@ -24,7 +24,7 @@
       "port": 8085
     },
     "ui": {
-      "enabled": true,
+      "enabled": false,
       "port": 3001
     },
     "singleProjectMode": true

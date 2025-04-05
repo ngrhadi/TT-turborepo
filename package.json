@@ -10,15 +10,20 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "firebase:function": "firebase emulators:start --only functions --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
+    "firebase:auth": "firebase emulators:start --only auth --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
+    "firebase:firestore": "firebase emulators:start --only firestore --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
     "firebase": "firebase emulators:start --only functions,auth,firestore --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
     "check-types": "turbo run check-types",
     "serve": "npm run build && firebase emulators:start --only functions,auth,firestore --project=emulator-demo-fb --config apps/frontend-repo/firebase.json",
     "start": "turbo run start --filter=frontend-repo --filter=backend-repo"
   },
   "devDependencies": {
+    "@types/node": "^22.14.0",
     "prettier": "^3.5.3",
+    "ts-node": "^10.9.2",
     "turbo": "^2.5.0",
-    "typescript": "5.8.2"
+    "typescript": "^5.8.2"
   },
   "packageManager": "npm@10.2.4",
   "engines": {
