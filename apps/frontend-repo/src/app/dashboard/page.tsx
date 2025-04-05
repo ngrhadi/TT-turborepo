@@ -1,6 +1,5 @@
 'use client';
 
-import ProtectedRoute from '@/components/templates/ProtectedRoutes';
 import {
   Box,
   Typography,
@@ -47,70 +46,68 @@ export default function DashboardPage() {
   };
 
   return (
-    <ProtectedRoute>
-      <Container maxWidth="md">
-        <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
-          minHeight="100vh"
-        >
-          <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
-            <Box
-              display="flex"
-              flexDirection="column"
-              alignItems="center"
-              gap={2}
+    <Container maxWidth="md">
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        minHeight="100vh"
+      >
+        <Paper elevation={3} sx={{ p: 4, borderRadius: 3 }}>
+          <Box
+            display="flex"
+            flexDirection="column"
+            alignItems="center"
+            gap={2}
+          >
+            <Typography variant="h4" gutterBottom>
+              🔐 Protected Dashboard
+            </Typography>
+            <Typography variant="body1" color="text.secondary">
+              Welcome! You have access to this page because you're
+              authenticated.
+            </Typography>
+
+            <Button
+              variant="contained"
+              disabled={userData ? true : false}
+              onClick={() => refetch('initial')}
             >
-              <Typography variant="h4" gutterBottom>
-                🔐 Protected Dashboard
-              </Typography>
-              <Typography variant="body1" color="text.secondary">
-                Welcome! You have access to this page because you're
-                authenticated.
-              </Typography>
+              Fetch User Info
+            </Button>
 
-              <Button
-                variant="contained"
-                disabled={userData ? true : false}
-                onClick={() => refetch('initial')}
-              >
-                Fetch User Info
-              </Button>
+            <UserCard
+              loading={loading}
+              userData={userData}
+              setOpenEdit={setOpenEdit}
+            />
 
-              <UserCard
-                loading={loading}
-                userData={userData}
-                setOpenEdit={setOpenEdit}
-              />
-
-              <Button
-                variant="contained"
-                color="error"
-                onClick={handleLogout}
-                sx={{ mt: 4 }}
-              >
-                Logout
-              </Button>
-            </Box>
-          </Paper>
-        </Box>
-        {alert && (
-          <AlertSnackbar
-            open={!!alert}
-            type={alert?.type || 'info'}
-            message={alert?.message || ''}
-            onClose={handleCloseAlert}
-          />
-        )}
-        <EditUserDialog
-          open={openEdit}
-          onClose={() => setOpenEdit(false)}
-          onSave={handleSave}
-          defaultName={userData?.name || ''}
-          defaultEmail={userData?.email || ''}
+            <Button
+              variant="contained"
+              color="error"
+              onClick={handleLogout}
+              sx={{ mt: 4 }}
+            >
+              Logout
+            </Button>
+          </Box>
+        </Paper>
+      </Box>
+      {alert && (
+        <AlertSnackbar
+          open={!!alert}
+          type={alert?.type || 'info'}
+          message={alert?.message || ''}
+          onClose={handleCloseAlert}
         />
-      </Container>
-    </ProtectedRoute>
+      )}
+      <EditUserDialog
+        open={openEdit}
+        onClose={() => setOpenEdit(false)}
+        onSave={handleSave}
+        defaultName={userData?.name || ''}
+        defaultEmail={userData?.email || ''}
+      />
+    </Container>
   );
 }

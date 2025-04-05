@@ -18,6 +18,7 @@ export default function ProtectedRoute({
 
   const authChecked = useAuthEffect();
 
+
   useEffect(() => {
     if (authChecked && !isAuthenticated) {
       router.push('/login');
@@ -31,6 +32,7 @@ export default function ProtectedRoute({
       </div>
     );
   }
+
 
   return <>{children}</>;
 }
