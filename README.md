@@ -69,13 +69,15 @@ This runs both frontend and backend using Turborepo.
 ---
 ## Project Structure
 
-/
+```
+📦 root
 ├── apps/
 │   ├── backend-repo/        → Express.js app
-│   └── frontend-repo/       → Next.js 14 app
-├── packages/                → Shared firebase-function
-├── firebase.json            → Emulator config
-└── turbo.json               → Turborepo config
+│   └── frontend-repo/       → Next.js 14 app (v14+ with App Router)
+├── packages/                → Shared Firebase functions (used in emulator)
+├── firebase.json            → Firebase Emulator config
+└── turbo.json               → Turborepo configuration
+```
 ---
 ## Tech Stack
 ---
