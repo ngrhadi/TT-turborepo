@@ -1,5 +1,3 @@
-Here’s a clean and informative README.md for your project based on your stack and setup:
-
 # 🔥 Firebase Turbo App
 
 A full-stack monorepo project built with **Turborepo**, integrating:
